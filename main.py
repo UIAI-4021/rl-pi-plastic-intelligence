@@ -7,10 +7,10 @@ import numpy as np
 env = gym.make("maze-random-10x10-plus-v0")
 observation = env.reset()
 
-#defining Q table and hyperparameters
+#initializing Q table and hyperparameters
 q_table = np.zeros((100, 4))
 learning_rate = 0.1
-discount_factor = 0.9
+discount_factor = 0.9 #gamma
 
 #number of wins
 k = 0
@@ -43,8 +43,6 @@ for episode in range(NUM_EPISODES):
             break
 
         env.render()
-
-
 
 # Close the environment
 env.close()
